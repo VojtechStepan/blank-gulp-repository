@@ -1,0 +1,34 @@
+@use 'variables' as v;
+@use 'breakpoints' as bp;
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 300;
+    font-family: Rubik, sans-serif;
+    line-height: 1.5;
+    color: v.$text-color;
+    background-color: v.$white;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    /* Odstranění výchozích stylů pro seznamy */
+}

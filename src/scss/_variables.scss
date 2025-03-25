@@ -1,0 +1,12 @@
+// Colours
+$white: #fff;
+$text-color: #333;
+
+// Breakpoints for responsive
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200,
+    ) !default;
