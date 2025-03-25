@@ -2,7 +2,6 @@
 @use 'breakpoints' as bp;
 @use 'mixins' as m;
 
-// Global
 html {
 	box-sizing: border-box;
 }
@@ -19,7 +18,12 @@ body {
 	padding: 0;
 }
 
-// Typography
+button,
+a,
+p {
+	font-family: Rubik, sans-serif;
+}
+
 h1 {
 	@include m.font-size-rem(32, 42);
 
@@ -106,8 +110,12 @@ h6 {
 
 ul {
 	list-style-type: none;
-	margin-left: 0;
+	margin: 0;
 	padding-left: 0;
+
+	ul {
+		margin-top: v.$spacer16;
+	}
 
 	li {
 		position: relative;
@@ -135,6 +143,10 @@ ol {
 	list-style-type: none;
 	counter-reset: item;
 
+	ol {
+		margin-top: v.$spacer16;
+	}
+
 	li {
 		position: relative;
 		min-height: 30px;
@@ -142,6 +154,10 @@ ol {
 		line-height: 1.5rem;
 		margin-bottom: v.$spacer16;
 		padding: v.$spacer04 0 0 v.$spacer24;
+
+		li {
+			padding-left: v.$spacer40;
+		}
 
 		&::before {
 			content: counters(item, '.') '.';
@@ -181,6 +197,51 @@ p {
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.button {
+	display: inline-flex;
+	font-weight: 500;
+	color: v.$body-text-color;
+	background: v.$button-bg;
+	border: none;
+	border-radius: 8px;
+	padding: v.$spacer08 v.$spacer16;
+	transition: v.$ease-in-out-300;
+	outline: none;
+	text-decoration: none;
+	cursor: pointer;
+
+	@include m.font-size-rem(16, 26);
+
+	&:hover,
+	&:focus {
+		color: v.$body-text-color;
+		text-decoration: none;
+		background: v.$button-hover-bg;
+	}
+
+	&--primary {
+		color: v.$white;
+		background: v.$primary-button-bg;
+
+		&:hover,
+		&:focus {
+			color: v.$white;
+			background: v.$primary-button-hover-bg;
+		}
+	}
+
+	&--secondary {
+		color: v.$white;
+		background: v.$secondary-button-bg;
+
+		&:hover,
+		&:focus {
+			color: v.$white;
+			background: v.$secondary-button-hover-bg;
+		}
 	}
 }
 

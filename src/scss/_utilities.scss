@@ -1,0 +1,75 @@
+@use 'variables' as v;
+
+// Flex
+.flex {
+	display: flex;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-align-center {
+	align-items: center;
+}
+
+.flex-justify-center {
+	justify-content: center;
+}
+
+@each $value, $gap in v.$spacing {
+	.flex-gap-#{$value} {
+		gap: $gap;
+	}
+}
+
+// Spacing
+@each $value, $space in v.$spacing {
+	// Padding
+	.pt-#{$value} {
+		padding-top: $space;
+	}
+	.pr-#{$value} {
+		padding-right: $space;
+	}
+	.pb-#{$value} {
+		padding-bottom: $space;
+	}
+	.pl-#{$value} {
+		padding-left: $space;
+	}
+	.py-#{$value} {
+		padding-top: $space;
+		padding-bottom: $space;
+	}
+	.px-#{$value} {
+		padding-right: $space;
+		padding-left: $space;
+	}
+
+	// Margin
+	.mt-#{$value} {
+		margin-top: $space;
+	}
+	.mr-#{$value} {
+		margin-right: $space;
+	}
+	.mb-#{$value} {
+		margin-bottom: $space;
+	}
+	.ml-#{$value} {
+		margin-left: $space;
+	}
+	.my-#{$value} {
+		margin-top: $space;
+		margin-bottom: $space;
+	}
+	.mx-#{$value} {
+		margin-right: $space;
+		margin-left: $space;
+	}
+}

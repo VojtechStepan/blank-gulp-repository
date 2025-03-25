@@ -5,18 +5,29 @@ $spacer08: ($spacer * 0.8);
 $spacer16: ($spacer * 1.6);
 $spacer20: ($spacer * 2);
 $spacer24: ($spacer * 2.4);
+$spacer32: ($spacer * 3.2);
 $spacer34: ($spacer * 3.4);
+$spacer40: ($spacer * 4);
 
 // Colours
 $white: #fff;
 $black: #000;
 $body-text-color: #333;
-$link-color: #06c;
-$link-hover-color: #05a;
+$link-color: #3498db;
+$link-hover-color: #2c81ba;
 $list-type-color: $link-color;
+$button-bg: #e9ecef;
+$button-hover-bg: #dee2e6;
+$primary-button-bg: #00b4d8;
+$primary-button-hover-bg: #219ebc;
+$secondary-button-bg: #ff9100;
+$secondary-button-hover-bg: #ff8500;
 
 // Sizes
 $content-width: 1440px;
+
+// Common
+$ease-in-out-300: ease-in-out 0.3s;
 
 // Breakpoints for responsive
 $grid-breakpoints: (
@@ -26,3 +37,11 @@ $grid-breakpoints: (
 	lg: 992px,
 	xl: 1200,
 ) !default;
+$spacing: (
+	4: 4px,
+	8: 8px,
+	16: 16px,
+	24: 24px,
+	32: 32px,
+	40: 40px,
+);
