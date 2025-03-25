@@ -1,7 +1,7 @@
 {
 	"type": "module",
-	"name": "smile-transport",
-	"description": "Statické webové stránky pro společnost sMile transport",
+	"name": "blank-repository",
+	"description": "Prázdná šablona pro tvorbu webových stránek a aplikací",
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "gulp",

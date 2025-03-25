@@ -1,12 +1,28 @@
+// Spaces
+$spacer: 10px;
+$spacer04: ($spacer * 0.4);
+$spacer08: ($spacer * 0.8);
+$spacer16: ($spacer * 1.6);
+$spacer20: ($spacer * 2);
+$spacer24: ($spacer * 2.4);
+$spacer34: ($spacer * 3.4);
+
 // Colours
 $white: #fff;
-$text-color: #333;
+$black: #000;
+$body-text-color: #333;
+$link-color: #06c;
+$link-hover-color: #05a;
+$list-type-color: $link-color;
+
+// Sizes
+$content-width: 1440px;
 
 // Breakpoints for responsive
 $grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200,
-    ) !default;
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200,
+) !default;

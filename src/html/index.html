@@ -1,39 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 	@@include('components/head.html', {'page-title': 'Název stránky'})
 	<body>
-		<header>
-			<h1><i class="fa fa-home"></i>Vítejte na mé s</h1>
-		</header>
-
-		<div class="test-styles">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere vitae enim malesuada auctor. Sed arcu leo, luctus vel vulputate nec, auctor vel
-			felis. Suspendisse eleifend eros in felis tincidunt, quis sagittis mi luctus. Cras blandit finibus nunc. Vestibulum ante ipsum primis in faucibus orci
-			luctus et ultrices posuere cubilia curae; Nunc felis eros, laoreet a accumsan quis, euismod sed eros. Nunc id erat suscipit, suscipit urna vel, ultricies
-			nulla. Donec aliquam, velit in accumsan convallis, justo dui molestie sapien, eget finibus massa libero nec nisi. Nunc viverra mi molestie lorem
-			consequat, non vulputate est rhoncus.
-			<a href="master-page.html">Odkaz</a>
-		</div>
-
-		<div data-aos="fade-down"></div>
-
-		<img src="../images/image.jpg" alt="ole" />
-
+		<!-- @@include('components/header.html') -->
 		<main>
-			<p>Toto je základní HTML5 šablona.</p>
+			<div class="intro-page">
+				<h1>Blank Gulp Repository</h1>
+				<div data-aos="fade-up">
+					<img src="../images/image.jpg" alt="ole" />
+				</div>
+				<a href="master-page.html">Zobrazit master page</a>
+			</div>
 		</main>
-
-		<footer>
-			<p>&copy; 2025 Moje stránka</p>
-		</footer>
-
-		<div data-aos="fade-down">
-			<img src="../images/image.jpg" alt="ole" />
-		</div>
-		<div data-aos="fade-up">
-			<img src="../images/image.jpg" alt="ole" />
-		</div>
-
+		<!-- @@include('components/footer.html') -->
 		<script type="module" src="js/main.js"></script>
 	</body>
 </html>

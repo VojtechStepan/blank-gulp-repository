@@ -11,6 +11,11 @@ import fileInclude from 'gulp-file-include'
 
 const sassCompiler = gulpSass(sass)
 
+sassCompiler.compiler.options = {
+	quietDeps: true,
+	noDeprecation: true,
+}
+
 // Cesty
 const paths = {
 	html: 'src/html/**/*.html',
@@ -28,7 +33,7 @@ gulp.task('html', () => {
 			fileInclude({
 				prefix: '@@', // Značka pro include
 				basepath: '@file',
-			}),
+			})
 		)
 		.pipe(gulp.dest(paths.dest))
 		.pipe(browserSync.stream())
@@ -39,7 +44,12 @@ gulp.task('styles', () => {
 	return gulp
 		.src(paths.styles)
 		.pipe(sourcemaps.init())
-		.pipe(sassCompiler().on('error', sassCompiler.logError))
+		.pipe(
+			sassCompiler({
+				outputStyle: 'expanded', // Můžete změnit na 'expanded' pro lepší ladění
+				quietDeps: true, // Potlačí většinu varování pro závislosti
+			}).on('error', sassCompiler.logError)
+		)
 		.pipe(autoprefixer({ cascade: false }))
 		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('.'))

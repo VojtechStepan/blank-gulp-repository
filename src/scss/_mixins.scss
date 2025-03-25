@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+// Mixin pro převod velikosti písma a line-height na rem
+@mixin font-size-rem($font-size, $line-height) {
+	$base-font-size: 16;
+
+	font-size: math.div($font-size, $base-font-size) + rem;
+	line-height: math.div($line-height, $base-font-size) + rem;
+}
