@@ -2,7 +2,9 @@
 @use 'breakpoints' as bp;
 @use 'mixins' as m;
 
-html {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 

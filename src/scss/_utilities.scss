@@ -21,6 +21,13 @@
 	justify-content: center;
 }
 
+.container {
+	width: 100%;
+	max-width: v.$content-width;
+	margin: 0 auto;
+	padding: 0 v.$spacer16;
+}
+
 @each $value, $gap in v.$spacing {
 	.flex-gap-#{$value} {
 		gap: $gap;
@@ -30,6 +37,9 @@
 // Spacing
 @each $value, $space in v.$spacing {
 	// Padding
+	.p-#{$value} {
+		padding: $space;
+	}
 	.pt-#{$value} {
 		padding-top: $space;
 	}
@@ -52,6 +62,9 @@
 	}
 
 	// Margin
+	.m-#{$value} {
+		margin-top: $space;
+	}
 	.mt-#{$value} {
 		margin-top: $space;
 	}

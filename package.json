@@ -5,7 +5,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "gulp",
-		"prettier:html": "npx prettier --config .prettierrc src/**/*.html --write",
+		"prettier": "npx prettier --config .prettierrc src/**/*.html --write && npx prettier --config .prettierrc src/js/**/*.js --write",
 		"lint:scss": "stylelint \"src/scss/**/*.scss\" --fix"
 	},
 	"devDependencies": {

@@ -23,19 +23,22 @@ const paths = {
 	scripts: 'src/js/**/*.js',
 	images: 'src/images/**/*',
 	dest: 'build',
+	htmlDest: 'build/html',
+	jsDest: 'build/js',
+	cssDest: 'build/css',
 }
 
-// HTML
+// HTML úloha
 gulp.task('html', () => {
 	return gulp
 		.src(['src/html/**/*.html', '!src/html/components/*.html']) // Nezahrnovat části
 		.pipe(
 			fileInclude({
-				prefix: '@@', // Značka pro include
+				prefix: '@@',
 				basepath: '@file',
 			})
 		)
-		.pipe(gulp.dest(paths.dest))
+		.pipe(gulp.dest(paths.htmlDest))
 		.pipe(browserSync.stream())
 })
 
@@ -46,14 +49,14 @@ gulp.task('styles', () => {
 		.pipe(sourcemaps.init())
 		.pipe(
 			sassCompiler({
-				outputStyle: 'expanded', // Můžete změnit na 'expanded' pro lepší ladění
-				quietDeps: true, // Potlačí většinu varování pro závislosti
+				outputStyle: 'expanded',
+				quietDeps: true,
 			}).on('error', sassCompiler.logError)
 		)
 		.pipe(autoprefixer({ cascade: false }))
 		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(`${paths.dest}/css`))
+		.pipe(gulp.dest(paths.cssDest))
 		.pipe(browserSync.stream())
 })
 
@@ -65,7 +68,7 @@ gulp.task('scripts', () => {
 		.pipe(concat('main.js'))
 		.pipe(terser())
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(`${paths.dest}/js`))
+		.pipe(gulp.dest(paths.jsDest))
 		.pipe(browserSync.stream())
 })
 
@@ -81,17 +84,18 @@ gulp.task('build', gulp.series('html', 'styles', 'scripts', 'images'))
 gulp.task('watch', () => {
 	browserSync.init({
 		server: {
-			baseDir: './build',
-			index: 'index.html',
+			baseDir: 'build',
 		},
+		startPath: '/html/index.html',
 		port: 3000,
 		open: true,
 	})
 
-	gulp.watch(paths.html, gulp.series('build'))
-	gulp.watch(paths.styles, gulp.series('build'))
-	gulp.watch(paths.scripts, gulp.series('build'))
-	gulp.watch(paths.images, gulp.series('images')) // Sledování změn v obrázcích
+	// Sledování změn
+	gulp.watch(paths.html, gulp.series('html'))
+	gulp.watch(paths.styles, gulp.series('styles'))
+	gulp.watch(paths.scripts, gulp.series('scripts'))
+	gulp.watch(paths.images, gulp.series('images'))
 })
 
 // Výchozí úloha
