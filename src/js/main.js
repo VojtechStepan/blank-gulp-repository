@@ -6,7 +6,7 @@ AOS.init({
 	once: true, // Animace se spustí jen jednou (default: false)
 	mirror: false, // Animace se opakuje při scrollování zpět (default: false)
 	anchorPlacement: 'top-bottom', // Kdy se animace spustí (viz níže)
-})
+});
 
 // Určuje kdy se animace spustí vzhledem k viewportu:
 //🔹 "top-bottom" (default) → spustí se, když se horní část elementu dotkne spodku viewportu.
@@ -16,12 +16,12 @@ AOS.init({
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 	anchor.addEventListener('click', function (e) {
-		e.preventDefault()
+		e.preventDefault();
 
 		document.querySelector(this.getAttribute('href')).scrollIntoView({
 			behavior: 'smooth',
-		})
-	})
-})
+		});
+	});
+});
 
-console.log('main.js bez chyb')
+console.log('main.js bez chyb');
